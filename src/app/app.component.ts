@@ -29,7 +29,7 @@ export class AppComponent {
     }
 
     //console.log(params)
-    this.httpclient.post('/envio',params).subscribe(response => {
+    this.httpclient.post('http://localhost:3000/envio',params).subscribe(response => {
       console.log(response)
       Notiflix.Loading.remove();
       Notiflix.Notify.success("Enviado correctamente.");
