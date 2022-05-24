@@ -14,7 +14,7 @@ export class AppComponent {
 
   constructor(private httpclient:HttpClient){
     this.datos = new FormGroup({
-      correo: new FormControl('',[Validators.required, Validators.email]),
+      email: new FormControl('',[Validators.required, Validators.email]),
       asunto: new FormControl('',[Validators.required]),
       mensaje: new FormControl('',[Validators.required])
     });
@@ -23,7 +23,7 @@ export class AppComponent {
   enviocorreos(){
     Notiflix.Loading.standard("Cargando... ")
     let params = {
-      email:this.datos.value.correo,
+      email:this.datos.value.email,
       asunto:this.datos.value.asunto,
       mensaje:this.datos.value.mensaje
     }
@@ -36,4 +36,3 @@ export class AppComponent {
     })
   }
 }
-
